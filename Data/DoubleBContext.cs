@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using DoubleBack.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace DoubleBack;
+namespace DoubleBack.Data;
 
 public partial class DoubleBContext : DbContext
 {
@@ -155,18 +156,18 @@ public partial class DoubleBContext : DbContext
             entity.ToTable("humans");
 
             entity.Property(e => e.Employeeid).HasColumnName("employeeid");
-            entity.Property(e => e.Email)
+            entity.Property(e => e.Contacts)
                 .HasMaxLength(255)
-                .HasColumnName("email");
+                .HasColumnName("contacts");
             entity.Property(e => e.Income)
                 .HasPrecision(10, 2)
                 .HasColumnName("income");
             entity.Property(e => e.Name)
                 .HasMaxLength(100)
                 .HasColumnName("name");
-            entity.Property(e => e.Phone)
-                .HasMaxLength(20)
-                .HasColumnName("phone");
+            entity.Property(e => e.Workaddress)
+                .HasColumnName("workAddress")
+                .HasMaxLength(255);
             entity.Property(e => e.Shopid).HasColumnName("shopid");
             entity.Property(e => e.Status)
                 .HasMaxLength(20)

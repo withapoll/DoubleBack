@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DoubleBack;
+namespace DoubleBack.Models;
 
 public partial class DeliveryCompany
 {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DoubleBack;
+namespace DoubleBack.Models;
 
 public partial class Human
 {
@@ -9,13 +9,13 @@ public partial class Human
 
     public string Name { get; set; } = null!;
 
-    public string? Phone { get; set; }
-
-    public string? Email { get; set; }
+    public string? Contacts { get; set; }
 
     public int? Shopid { get; set; }
 
     public string? Status { get; set; }
+
+    public string? Workaddress { get; set; }
 
     public decimal? Income { get; set; }
 
