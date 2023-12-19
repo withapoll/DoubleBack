@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace DoubleBack.Models;
 
@@ -13,5 +14,10 @@ public partial class Expense
 
     public decimal Amount { get; set; }
 
+    public decimal Price { get; set; }
+
+    public DateOnly ExpensesDate { get; set; }
+
+    [JsonIgnore]
     public virtual Coffeeshop? Shop { get; set; }
 }

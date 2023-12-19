@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace DoubleBack.Models;
 
@@ -15,7 +16,9 @@ public partial class DeliveryOrder
 
     public DateOnly? Deliverydate { get; set; }
 
+    [JsonIgnore]
     public virtual DeliveryCompany? Company { get; set; }
 
+    [JsonIgnore]
     public virtual Coffeeshop? Shop { get; set; }
 }

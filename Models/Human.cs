@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace DoubleBack.Models;
 
@@ -19,5 +20,6 @@ public partial class Human
 
     public decimal? Income { get; set; }
 
+    [JsonIgnore]
     public virtual Coffeeshop? Shop { get; set; }
 }

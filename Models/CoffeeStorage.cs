@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace DoubleBack.Models;
 
@@ -13,5 +14,6 @@ public partial class CoffeeStorage
 
     public int? Quantity { get; set; }
 
+    [JsonIgnore]
     public virtual Coffeeshop? Shop { get; set; }
 }

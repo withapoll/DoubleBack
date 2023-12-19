@@ -143,7 +143,11 @@ public partial class DoubleBContext : DbContext
                 .HasMaxLength(100)
                 .HasColumnName("expensename");
             entity.Property(e => e.Shopid).HasColumnName("shopid");
-
+            entity.Property(e => e.Price)
+            .HasPrecision(10, 2)
+            .HasColumnName("price");
+            entity.Property(e => e.ExpensesDate)
+            .HasColumnName("expenses_date");
             entity.HasOne(d => d.Shop).WithMany(p => p.Expenses)
                 .HasForeignKey(d => d.Shopid)
                 .HasConstraintName("expenses_shopid_fkey");
@@ -166,7 +170,7 @@ public partial class DoubleBContext : DbContext
                 .HasMaxLength(100)
                 .HasColumnName("name");
             entity.Property(e => e.Workaddress)
-                .HasColumnName("workAddress")
+                .HasColumnName("workaddress")
                 .HasMaxLength(255);
             entity.Property(e => e.Shopid).HasColumnName("shopid");
             entity.Property(e => e.Status)
